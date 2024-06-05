@@ -1,0 +1,46 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+h2 {
+    font-size: 2rem;
+}
+.container {
+  padding: 100px;
+}
+header {
+  background: #020024;
+  position: relative;
+  background: linear-gradient(170deg, #020024 65%, #ffffff 10%);
+}
+.header-content {
+  max-width: 1200px;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  /* gap: 48px; */
+}
+.profile-image {
+  flex-basis: 35%;
+  overflow: hidden;
+  box-shadow: 2px 2px 3px 0 gray;
+}
+.profile-image img {
+  width: 100%;
+}
+.about {
+  padding: 32px;
+  flex-basis: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  line-height: 2;
+  background-color: #fff;
+  box-shadow: 0 0 3px 0 black;
+}
+/* My work */
+.my-work {
+  max-width: 1200px;
+  margin: 0 auto;
+}
