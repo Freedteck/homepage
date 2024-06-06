@@ -215,4 +215,7 @@ footer {
   footer .footer-contents {
     flex-direction: column;
   }
+  header, main, footer {
+    padding: 50px 10px;
+  }
 }
