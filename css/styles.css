@@ -2,45 +2,52 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-size: 1.1rem;
 }
 h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 h3 {
   font-size: 1.5rem;
 }
-.container {
-  padding: 30px 50px;
-}
 header {
-  background: #020024;
-  position: relative;
-  background: linear-gradient(170deg, #020024 65%, #ffffff 10%);
+  background: #207cb9;
+  padding: 50px;
+  background: linear-gradient(172deg, #207cb9 65%, #ffffff 65%);
 }
 .header-content {
   display: flex;
   align-items: center;
+  max-width: 1350px;
+  margin: 0 auto;
 }
 .profile-image {
   flex-basis: 30%;
-  overflow: hidden;
-  box-shadow: 2px 2px 3px 0 gray;
+  position: relative;
+}
+.profile-image h1 {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: #FFF;
+  text-shadow: 1px 1px 3px #000;
 }
 .profile-image img {
   width: 100%;
 }
 .about {
-  padding: 32px;
+  padding: 20px 32px;
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 20px;
   line-height: 2;
   background-color: #fff;
-  box-shadow: 0 0 3px 0 black;
+  box-shadow: 1px 1px 3px 1px gray;
 }
 .about .socials {
   display: flex;
@@ -48,31 +55,39 @@ header {
   gap: 20px;
   align-self: flex-end;
 }
-/* My work */
+
+/* Main */
+main {
+  padding: 50px;
+}
 .my-work {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  max-width: 1350px;
+  margin: 0 auto;
 }
 .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
   gap: 40px;
+  justify-content: center;
 }
 .project-card {
   display: flex;
   flex-direction: column;
   gap: 16px;
   box-shadow: 0 2px 5px 1px gray;
-  padding-bottom: 40px;
+  padding-bottom: 60px;
 }
 .project-img {
-  border-bottom: .5px solid black;
+  border-bottom: 0.5px solid black;
 }
 .project-img img {
   width: 100%;
 }
-.project-card .name-icon, .project-card .desc {
+.project-card .name-icon,
+.project-card .desc {
   padding: 0 20px;
 }
 .name-icon {
@@ -81,4 +96,123 @@ header {
   align-items: center;
   justify-content: space-between;
   gap: 10px;
+}
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Footer */
+footer {
+  padding: 50px;
+  background-color: #207cb9;
+  color: #fff;
+  line-height: 1.5;
+}
+.footer-contents {
+  max-width: 1350px;
+  margin: 0 auto;
+  display: flex;
+  /* align-items: flex-start; */
+  gap: 20px;
+}
+.footer-contents .left-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  flex-basis: 40%;
+}
+.call-mail {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.call-mail a {
+  text-decoration: none;
+  color: #FFF;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.left-footer .socials {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-top: 20px;
+}
+.right-footer {
+  flex: 1;
+  background-color: blue;
+  background-image: url('../img/profile.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 250px 0;
+  /* height: 400px; */
+}
+.right-footer img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Media query */
+@media (max-width: 1000px) {
+  .header-content {
+    display: flow-root;
+  }
+  .header-content .profile-image {
+    float: left;
+    width: 30%;
+    margin-right: 30px;
+    transform: scale(1.15);
+  }
+  .profile-image h1 {
+    /* font-size: 2.2rem; */
+    top: 0;
+    bottom: auto;
+    right: -200px;
+    width: auto;
+    background-color: transparent;
+    /* left: auto; */
+  }
+  .about {
+    display: block;
+  }
+  .about h2 {
+    text-align: center;
+  }
+  .about .socials {
+    display: none;
+  }
+}
+@media (max-width: 750px) {
+  .header-content {
+    display: flex;
+    flex-direction: column;
+    /* overflow: hidden; */
+  }
+  .header-content .profile-image {
+    width: 100%;
+    margin: 0;
+    background-color: #fff;
+    clear: both;
+    transform: scale(1);
+  }
+  .profile-image h1 {
+    top: auto;
+    right: auto;
+    bottom: 0;
+    width: 100%;
+  }
+  .about {
+    box-shadow: none;
+  }
+  .about .socials {
+    display: flex;
+    justify-content: center;
+  }
+  footer .footer-contents {
+    flex-direction: column;
+  }
 }
