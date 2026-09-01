@@ -1,0 +1,25 @@
+.wrap {
+  min-height: 62vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding-block: 80px;
+  background: var(--c-cream-soft);
+}
+
+.code {
+  font-size: clamp(4rem, 10vw, 6.5rem);
+  font-weight: 800;
+  color: var(--c-coral);
+  line-height: 1;
+}
+
+.title {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin: 10px 0 12px;
+}
+
+.sub {
+  color: var(--c-muted);
+  margin-bottom: 30px;
+}

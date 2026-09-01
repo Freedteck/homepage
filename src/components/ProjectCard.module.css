@@ -1,0 +1,119 @@
+.card {
+  position: relative;
+  background: transparent;
+  border: 1px solid var(--c-border);
+  border-radius: 6px;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  background: var(--c-white);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.cardLink {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--c-cream-soft);
+}
+
+.media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .media img {
+  transform: scale(1.035);
+}
+
+.mediaFallback {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  font-size: 3.4rem;
+  font-weight: 800;
+  color: var(--c-coral);
+  background: linear-gradient(135deg, var(--c-cream-soft), var(--c-cream));
+}
+
+.body {
+  padding: 22px 24px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  flex: 1;
+}
+
+.title {
+  font-size: 1.32rem;
+}
+
+.blurb {
+  font-size: 0.94rem;
+  color: var(--c-body);
+}
+
+.more {
+  margin-top: auto;
+  padding-top: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--c-coral-dark);
+  transition: gap 0.25s ease;
+}
+
+.card:hover .more {
+  gap: 12px;
+}
+
+/* Featured layout: image left, copy right, full row */
+@media (min-width: 900px) {
+  .cardFeatured {
+    grid-column: 1 / -1;
+  }
+
+  .cardFeatured .cardLink {
+    flex-direction: row;
+  }
+
+  .cardFeatured .media {
+    flex: 1.15;
+    aspect-ratio: auto;
+    min-height: 340px;
+  }
+
+  .cardFeatured .body {
+    flex: 1;
+    justify-content: center;
+    padding: clamp(28px, 4vw, 48px);
+    gap: 12px;
+  }
+
+  .cardFeatured .title {
+    font-size: clamp(1.7rem, 2.6vw, 2.2rem);
+  }
+
+  .cardFeatured .blurb {
+    font-size: 1.02rem;
+    max-width: 46ch;
+  }
+}

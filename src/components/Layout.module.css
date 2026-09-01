@@ -1,0 +1,389 @@
+.shell {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+}
+
+/* ---------------- Navbar ---------------- */
+
+/* The template keeps its navbar on the navy on every page */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--c-dark);
+  border-bottom: 1px solid transparent;
+  transition:
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.navScrolled {
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px rgba(40, 41, 62, 0.25);
+}
+
+.navInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 74px;
+  gap: 24px;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
+.logoDot {
+  color: var(--c-coral);
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.link {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.72);
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: var(--c-coral);
+}
+
+.navCta {
+  margin-left: 6px;
+}
+
+/* Mobile bar actions: Resume stays visible, plus the burger. Desktop hides this group */
+.navActions {
+  display: none;
+  align-items: center;
+  gap: 10px;
+}
+
+.navActions .navCta {
+  margin-left: 0;
+}
+
+.burger {
+  color: #fff;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.burger:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ---------------- Mobile drawer: slides in right to left ---------------- */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 55;
+  background: rgba(16, 17, 31, 0.55);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.overlayShow {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  width: min(320px, 84vw);
+  background: var(--c-dark);
+  box-shadow: -18px 0 44px rgba(0, 0, 0, 0.35);
+  transform: translateX(105%);
+  visibility: hidden;
+  transition:
+    transform 0.34s cubic-bezier(0.22, 0.61, 0.36, 1),
+    visibility 0s linear 0.34s;
+}
+
+.drawerOpen {
+  transform: translateX(0);
+  visibility: visible;
+  transition: transform 0.34s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.drawerTop {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 74px;
+  padding: 0 22px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.drawerTitle {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.drawerClose {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.drawerClose:hover {
+  border-color: var(--c-coral);
+  color: var(--c-coral);
+  transform: rotate(90deg);
+}
+
+.drawerLinks {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 22px 24px;
+}
+
+.drawerLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 2px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: color 0.2s ease;
+}
+
+.drawerLink:hover {
+  color: var(--c-coral);
+}
+
+.drawerLinkActive {
+  color: var(--c-coral);
+}
+
+.drawerArrow {
+  color: rgba(255, 255, 255, 0.35);
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.drawerLink:hover .drawerArrow {
+  color: var(--c-coral);
+  transform: translateX(3px);
+}
+
+/* Drawer belongs to mobile only, even if the menu was left open across a resize */
+@media (min-width: 861px) {
+  .overlay,
+  .drawer {
+    display: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .links {
+    display: none;
+  }
+
+  .navActions {
+    display: flex;
+  }
+}
+
+/* Small phones: tighten the bar so logo, Resume and burger fit 320px wide */
+@media (max-width: 400px) {
+  .logo {
+    font-size: 1.22rem;
+  }
+
+  .navInner {
+    gap: 14px;
+  }
+
+  .navActions {
+    gap: 8px;
+  }
+
+  .navActions .navCta {
+    padding: 10px 14px;
+  }
+}
+
+/* ---------------- Footer: redone contact section + brand row ---------------- */
+
+.footer {
+  background: var(--c-dark);
+  color: var(--c-on-dark-muted);
+  padding: clamp(64px, 9vw, 104px) 0 clamp(40px, 6vw, 56px);
+  margin-top: auto;
+}
+
+/* Contact section: heading and sub on the left, actions stacked on the right */
+.footerContact {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: clamp(32px, 5vw, 64px);
+  padding-bottom: clamp(44px, 6vw, 64px);
+}
+
+.footerTitle {
+  color: #fff;
+  font-size: clamp(2rem, 4.6vw, 3rem);
+  margin-bottom: 14px;
+}
+
+.footerSub {
+  max-width: 40ch;
+}
+
+.footerContactActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 14px;
+}
+
+/* Fixed optical box so the mail, WhatsApp and LinkedIn glyphs read the same size and the text starts at the same x; the fixed height keeps all three buttons identical */
+.contactIcon {
+  width: 20px;
+  height: 18px;
+  align-items: center;
+  justify-content: center;
+}
+
+.footerLoc {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--c-on-dark-muted);
+}
+
+/* Brand row under the contact section */
+.footerBrandRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding-top: clamp(32px, 5vw, 44px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logoLight {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.footerBlurb {
+  margin-top: 12px;
+  max-width: 34ch;
+  font-size: 0.95rem;
+}
+
+.footerSocials {
+  display: flex;
+  gap: 12px;
+}
+
+.footerBrandMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.socialBtn {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.07);
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.socialBtn:hover {
+  background: var(--c-coral);
+  transform: translateY(-3px);
+}
+
+.socialBtn img {
+  filter: brightness(0) invert(1);
+}
+
+@media (max-width: 860px) {
+  .footerContact {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .footerBrandRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .footerBrandMeta {
+    align-items: flex-start;
+  }
+}
+
+/* Phones: icons only, still one straight line, left aligned with the text above */
+@media (max-width: 560px) {
+  .footerContactActions {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 16px;
+  }
+
+  .footerContactActions .btn {
+    width: 54px;
+    height: 54px;
+    padding: 0;
+    border-radius: 50%;
+  }
+
+  .footerContactActions .btnLabel {
+    display: none;
+  }
+}

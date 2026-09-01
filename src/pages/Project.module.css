@@ -1,0 +1,493 @@
+/* ============ PAGE BASE ============ */
+
+/* The template's single-project page sits on the cream base, top to bottom */
+.page {
+  background: var(--c-cream-soft);
+}
+
+/* ============ HEADER ============ */
+
+.header {
+  padding-top: clamp(28px, 4vw, 48px);
+  padding-bottom: clamp(32px, 4vw, 48px);
+  background: var(--c-cream-soft);
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--c-coral-dark);
+  margin-bottom: 28px;
+  transition: color 0.2s ease;
+}
+
+.back:hover {
+  color: var(--c-coral);
+}
+
+.backIcon {
+  transform: rotate(180deg);
+}
+
+.title {
+  font-size: clamp(2.3rem, 5vw, 3.6rem);
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  color: var(--c-body);
+  max-width: 58ch;
+}
+
+/* ============ META ROW ============ */
+
+.meta {
+  margin-top: 36px;
+  padding-block: 22px;
+  border-top: 1px solid var(--c-border);
+  border-bottom: 1px solid var(--c-border);
+  display: grid;
+  grid-template-columns: 1fr 2.1fr 1fr;
+  gap: 28px;
+}
+
+.metaCell {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  align-items: flex-start;
+}
+
+.metaLabel {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--c-muted);
+}
+
+.metaValue {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--c-heading);
+}
+
+/* Stack: one straight line, the rest hides behind +N and shows on hover */
+
+.metaStack {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.stackChip {
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--c-heading);
+  background: var(--c-white);
+  border: 1px solid var(--c-border);
+  padding: 4px 11px;
+  border-radius: var(--radius-pill);
+}
+
+.stackMore {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.stackMoreBtn {
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--c-coral-dark);
+  background: var(--c-white);
+  border: 1px solid var(--c-border);
+  padding: 4px 11px;
+  border-radius: var(--radius-pill);
+  cursor: default;
+  transition: border-color 0.2s ease;
+}
+
+.stackMore:hover .stackMoreBtn,
+.stackMore:focus-within .stackMoreBtn {
+  border-color: var(--c-coral);
+}
+
+.stackMore:focus {
+  outline: none;
+}
+
+.stackPop {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  right: 0;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 12px;
+  background: var(--c-white);
+  border: 1px solid var(--c-border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-pop);
+  z-index: 40;
+}
+
+.stackMore:hover .stackPop,
+.stackMore:focus-within .stackPop {
+  display: flex;
+}
+
+.metaLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.93rem;
+  font-weight: 700;
+  color: var(--c-coral-dark);
+  overflow-wrap: anywhere;
+}
+
+.metaLink:hover {
+  color: var(--c-coral);
+}
+
+/* ============ HERO IMAGE ============ */
+
+.heroImgSection {
+  padding-block: clamp(28px, 4vw, 44px) 0;
+}
+
+.heroImg {
+  width: 100%;
+  border-radius: 16px;
+}
+
+/* ============ SPLIT SECTIONS ============ */
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(200px, 280px) 1fr;
+  gap: clamp(28px, 5vw, 72px);
+  align-items: start;
+}
+
+.splitTitle {
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  font-weight: 800;
+  color: var(--c-heading);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.splitBody {
+  max-width: 68ch;
+}
+
+.para {
+  margin-bottom: 18px;
+  font-size: 1.02rem;
+}
+
+.para:last-child {
+  margin-bottom: 0;
+}
+
+.bodySection {
+  padding-top: clamp(48px, 6vw, 80px);
+}
+
+.problemSection {
+  background: var(--c-cream);
+}
+
+/* ============ WHAT I BUILT ============ */
+
+.featureList {
+  display: flex;
+  flex-direction: column;
+}
+
+.featureItem {
+  padding-block: 18px;
+}
+
+.featureItem + .featureItem {
+  border-top: 1px solid var(--c-border);
+}
+
+.featureTitle {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.featureDesc {
+  font-size: 0.95rem;
+}
+
+/* ============ UNDER THE HOOD ============ */
+
+.story {
+  background: var(--c-dark);
+  border-radius: 24px;
+  padding: clamp(32px, 5vw, 56px);
+}
+
+.storyGrid {
+  display: grid;
+  grid-template-columns: minmax(200px, 280px) 1fr;
+  gap: clamp(28px, 5vw, 72px);
+  align-items: start;
+}
+
+.storyTitle {
+  color: #fff;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+}
+
+.storyItem {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 20px;
+  padding-block: 26px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.storyItem:last-child {
+  border-bottom: none;
+  padding-bottom: 4px;
+}
+
+.storyNum {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--c-coral);
+  line-height: 1.1;
+}
+
+.storyItemTitle {
+  color: #fff;
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+
+.storyItemDesc {
+  color: var(--c-on-dark-muted);
+  font-size: 0.96rem;
+  max-width: 68ch;
+}
+
+/* ============ INSIDE THE PRODUCT ============ */
+
+.galleryTitle {
+  margin-bottom: 30px;
+}
+
+/* Carousel: one large viewport, sliding track, arrows overlaid, dots below */
+
+.carouselViewport {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--c-border);
+  background: var(--c-white);
+  touch-action: pan-y;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.carouselViewport:active {
+  cursor: grabbing;
+}
+
+.carouselViewport:focus-visible {
+  outline: 2px solid var(--c-coral);
+  outline-offset: 3px;
+}
+
+.carouselTrack {
+  display: flex;
+  transition: transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.carouselSlide {
+  min-width: 100%;
+  margin: 0;
+}
+
+.carouselSlide img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top center;
+  pointer-events: none;
+}
+
+.carouselBtn {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--c-heading);
+  border: 1px solid var(--c-border);
+  box-shadow: 0 6px 18px rgba(40, 41, 62, 0.18);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.25s ease,
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* Arrows live on hover, gated to real pointer devices so touch never gets hover-stuck arrows; keyboard users tab to them */
+@media (hover: hover) {
+  .carouselViewport:hover .carouselBtn {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.carouselBtn:focus-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.carouselBtn:hover {
+  background: var(--c-coral);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.carouselBtn:focus-visible {
+  outline: 2px solid var(--c-coral);
+  outline-offset: 2px;
+}
+
+.carouselBtnPrev {
+  left: 14px;
+}
+
+.carouselBtnNext {
+  right: 14px;
+}
+
+.carouselBtnFlip {
+  transform: rotate(180deg);
+}
+
+.carouselDots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.carouselDot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-pill);
+  background: rgba(40, 41, 62, 0.22);
+  transition:
+    width 0.25s ease,
+    background 0.25s ease;
+}
+
+.carouselDot:hover {
+  background: rgba(40, 41, 62, 0.45);
+}
+
+.carouselDot:focus-visible {
+  outline: 2px solid var(--c-coral);
+  outline-offset: 2px;
+}
+
+.carouselDotActive,
+.carouselDotActive:hover {
+  width: 24px;
+  background: var(--c-coral);
+}
+
+.carouselBar {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.carouselCaption {
+  font-size: 0.85rem;
+  color: var(--c-muted);
+  min-width: 0;
+}
+
+.carouselCount {
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--c-coral-dark);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============ MORE PROJECTS ============ */
+
+.relatedTitle {
+  margin-bottom: 30px;
+}
+
+.relatedGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+/* ============ RESPONSIVE ============ */
+
+@media (max-width: 900px) {
+  .meta {
+    grid-template-columns: 1fr 1.8fr 1fr;
+    gap: 20px;
+  }
+
+  .split {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .storyGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .relatedGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .storyItem {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+/* The three meta columns get cramped before phones, so stack earlier */
+@media (max-width: 640px) {
+  .meta {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}

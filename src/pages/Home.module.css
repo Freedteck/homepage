@@ -1,0 +1,305 @@
+/* ============ HERO ============ */
+
+.hero {
+  background: var(--c-dark);
+  padding-top: clamp(48px, 7vw, 88px);
+  padding-bottom: clamp(56px, 8vw, 104px);
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: clamp(36px, 5vw, 64px);
+  align-items: center;
+}
+
+.heroTitle {
+  font-size: clamp(2.5rem, 5.6vw, 4.5rem);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 22px;
+}
+
+.heroAccent {
+  color: var(--c-coral);
+}
+
+.heroSub {
+  font-size: 1.06rem;
+  color: rgba(255, 255, 255, 0.64);
+  max-width: 54ch;
+  margin-bottom: 30px;
+}
+
+.heroCtas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 26px;
+}
+
+.heroSocials {
+  display: flex;
+  gap: 12px;
+}
+
+.heroSocialBtn {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.heroSocialBtn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--c-coral);
+}
+
+.heroSocialBtn img {
+  filter: brightness(0) invert(1);
+}
+
+/* Hero image: plain, nothing around it */
+
+.heroArtWrap {
+  position: relative;
+}
+
+.heroArt {
+  max-width: 440px;
+  margin-inline: auto;
+}
+
+.heroImg {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* ============ SECTION HEADS ============ */
+
+.sectionHead {
+  margin-bottom: clamp(36px, 5vw, 52px);
+}
+
+/* ============ SECTION BANDS ============ */
+
+/* The template keeps every light section on one cream base */
+.band {
+  background: var(--c-cream-soft);
+}
+
+/* ============ WORK GRID ============ */
+
+.workGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.workFeatured {
+  grid-column: 1 / -1;
+}
+
+.workNote {
+  margin-top: 34px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--c-muted);
+}
+
+.workNote a {
+  color: var(--c-coral-dark);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.workNote a:hover {
+  color: var(--c-coral);
+}
+
+/* ============ EXPERIENCE ============ */
+
+/* Navy band, like the template's mid-page dark sections */
+.expSection {
+  background: var(--c-dark);
+}
+
+.expSection :global(.h2) {
+  color: #fff;
+}
+
+.expList {
+  margin-top: clamp(28px, 4vw, 44px);
+}
+
+.expItem {
+  padding-block: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.expItem:first-child {
+  padding-top: 6px;
+}
+
+.expItem:last-child {
+  border-bottom: none;
+}
+
+.expHead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.expRole {
+  font-size: 1.18rem;
+  color: #fff;
+}
+
+.expCompany {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--c-coral);
+  margin-top: 3px;
+}
+
+.expCompany span {
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 600;
+}
+
+.expPeriod {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.55);
+  white-space: nowrap;
+  padding-top: 5px;
+}
+
+.expBody {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.expPoint {
+  font-size: 0.95rem;
+  max-width: 72ch;
+  color: var(--c-on-dark-muted);
+}
+
+/* ============ SKILLS ============ */
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.skillCard {
+  background: transparent;
+  border: 1px solid var(--c-border);
+  border-radius: 6px;
+  padding: 30px 28px;
+  height: 100%;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.skillCard:hover {
+  background: var(--c-white);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.skillIcon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--c-cream);
+  color: var(--c-coral-dark);
+  margin-bottom: 20px;
+}
+
+.skillTitle {
+  font-size: 1.22rem;
+  margin-bottom: 10px;
+}
+
+.skillText {
+  font-size: 0.94rem;
+  margin-bottom: 20px;
+}
+
+.skillChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--c-heading);
+  background: var(--c-cream-soft);
+  border: 1px solid var(--c-border);
+  padding: 6px 13px;
+  border-radius: var(--radius-pill);
+}
+
+/* ============ RESPONSIVE ============ */
+
+@media (max-width: 900px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .heroArt {
+    max-width: 400px;
+  }
+
+  .workGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .skillsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .expHead {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .expPeriod {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .heroCtas .btn {
+    width: 100%;
+  }
+}
+
+/* The header bar already carries Resume on mobile, so the hero download is redundant there */
+@media (max-width: 860px) {
+  /* Two classes so the rule outranks global .btn display regardless of stylesheet order */
+  .heroCtas .heroResume {
+    display: none;
+  }
+}
